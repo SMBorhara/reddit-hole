@@ -1,12 +1,21 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
+import newPostsReducer from '../features/actions/newPostsReducer';
 
-import { loadPostsReducer } from '../features/homePage/homePage.slice';
+const initialState = {};
 
 const reducers = {
-	loadPosts: loadPostsReducer,
+	newPostList: newPostsReducer,
 };
 
-
 const rootReducer = combineReducers(reducers);
-export const store = createStore(rootReducer, applyMiddleware(thunk));
+
+export const store = createStore(
+	rootReducer,
+	initialState,
+	applyMiddleware(thunk)
+);
+
+export const selectNewPosts = (state) => state.newPostList;
+
+// export default store;
