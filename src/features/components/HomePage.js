@@ -8,14 +8,14 @@ const HomePage = () => {
 	const dispatch = useDispatch();
 	const newPosts = useSelector(selectNewPosts);
 	// useSelector((state) => console.log('state===>', state.newPostList));
-	console.log('NP USESELECTOR??', newPosts);
+	// console.log('NP USESELECTOR??', newPosts);
 
 	useEffect(() => {
 		dispatch(getNewPosts(newPosts));
 	}, [dispatch]);
 
 	let listInfo = newPosts.newPosts;
-	console.log('infoTest =====', listInfo);
+	// console.log('infoTest =====', listInfo);
 
 	return (
 		<div className="bunnyHome">
@@ -34,6 +34,15 @@ const HomePage = () => {
 			<h2>Categories</h2>
 			<NavLink to="/til">
 				<h3>TIL</h3>
+			</NavLink>
+			<NavLink to="/explain">
+				<h3>ELI5</h3>
+			</NavLink>
+			<NavLink to="/memes">
+				<h3>Memes</h3>
+			</NavLink>
+			<NavLink to="/programhumor">
+				<h3>Program Humor</h3>
 			</NavLink>
 		</div>
 	);
