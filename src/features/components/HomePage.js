@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNewPosts } from '../actions/newPostsAction';
 import { selectNewPosts } from '../../app/store';
+import { NavLink } from 'react-router-dom';
 
 const HomePage = () => {
 	const dispatch = useDispatch();
@@ -26,16 +27,14 @@ const HomePage = () => {
 			/>
 			<h1>Most Recent Posts</h1>
 			{listInfo ? (
-				listInfo.map((post, index) => {
-					<div>
-						<h1 key={index}>{post.data.title}</h1>
-						<img src={post.data.thumbnail} />
-					</div>;
-				})
+				listInfo.map((post, index) => <h2 key={index}>{post.data.title}</h2>)
 			) : (
 				<h1>Loading...</h1>
 			)}
 			<h2>Categories</h2>
+			<NavLink to="/til">
+				<h3>TIL</h3>
+			</NavLink>
 		</div>
 	);
 };

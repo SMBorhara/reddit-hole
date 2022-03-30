@@ -1,2 +1,5 @@
-export const GET_NEWPOSTS = 'GET_NEWPOSTS'
-// export const POSTS_ERROR = 'POSTS_ERROR'
+// homepage posts
+export const GET_NEWPOSTS = 'GET_NEWPOSTS';
+
+// TIL posts
+export const GET_TILPOSTS = 'GET_TILPOSTS';
