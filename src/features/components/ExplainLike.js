@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, NavLink } from 'react-router-dom';
 import { selectExplainPosts } from '../../app/store';
 import { getExplainPosts } from '../actions/explainActions';
+import './css/generalformat.css';
 
 const ExplainLike = () => {
 	const dispatch = useDispatch();
@@ -23,31 +24,35 @@ const ExplainLike = () => {
 
 	return (
 		<div>
-			<h2>Explain Like I'm five</h2>
 			<img
 				src="https://i.etsystatic.com/18497899/r/il/c2a9bc/2271558047/il_1588xN.2271558047_96n3.jpg"
 				alt="rabbit wearing sunglasses"
 				width="200"
 				height="200"
 			/>
+			<h1>Explain Like I'm five</h1>
 			{explainList ? (
-				explainList.map((post, index) => <h2 key={index}>{post.data.title}</h2>)
+				explainList.map((post, index) => (
+					<h2 className="listDisplay" key={index}>
+						{post.data.title}
+					</h2>
+				))
 			) : (
 				<h1>Loading...</h1>
 			)}
-			<div className="navbar">
-				<h3>Categories</h3>
+			<div className="navBar">
+				<h2 className="category">Categories</h2>
 				<button onClick={homeButton}>
 					<p>Go Home</p>
 				</button>
-				<NavLink to="/til">
+				<NavLink to="/til" style={{ textDecoration: 'none' }}>
 					<h3>TIL</h3>
 				</NavLink>
-				<NavLink to="/memes">
+				<NavLink to="/memes" style={{ textDecoration: 'none' }}>
 					<h3>Memes</h3>
 				</NavLink>
-				<NavLink to="/programhumor">
-					<h3>Program Humor</h3>
+				<NavLink to="/programhumor" style={{ textDecoration: 'none' }}>
+					<h3>Programmer Humor</h3>
 				</NavLink>
 			</div>
 		</div>

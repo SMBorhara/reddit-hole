@@ -4,6 +4,8 @@ import { getNewPosts } from '../actions/newPostsAction';
 import { selectNewPosts } from '../../app/store';
 import { NavLink } from 'react-router-dom';
 
+import './css/generalformat.css';
+
 const HomePage = () => {
 	const dispatch = useDispatch();
 	const newPosts = useSelector(selectNewPosts);
@@ -18,32 +20,43 @@ const HomePage = () => {
 	// console.log('infoTest =====', listInfo);
 
 	return (
-		<div className="bunnyHome">
+		<div className="page">
 			<img
+				className="bunny"
 				src="https://i.etsystatic.com/18497899/r/il/c2a9bc/2271558047/il_1588xN.2271558047_96n3.jpg"
 				alt="rabbit wearing sunglasses"
 				width="200"
 				height="200"
 			/>
-			<h1>Most Recent Posts</h1>
-			{listInfo ? (
-				listInfo.map((post, index) => <h2 key={index}>{post.data.title}</h2>)
-			) : (
-				<h1>Loading...</h1>
-			)}
-			<h2>Categories</h2>
-			<NavLink to="/til">
-				<h3>TIL</h3>
-			</NavLink>
-			<NavLink to="/explain">
-				<h3>ELI5</h3>
-			</NavLink>
-			<NavLink to="/memes">
-				<h3>Memes</h3>
-			</NavLink>
-			<NavLink to="/programhumor">
-				<h3>Program Humor</h3>
-			</NavLink>
+			<h1 className="categoryHeading">Most Recent Posts</h1>
+			<div className="posts">
+				{listInfo ? (
+					listInfo.map((post, index) => (
+						<h2 className="listDisplay" key={index}>
+							{post.data.title}
+						</h2>
+					))
+				) : (
+					<h1>Loading...</h1>
+				)}
+			</div>
+			<div className="navBar">
+				<h2 className="category">Categories</h2>
+				<div>
+					<NavLink to="/til" style={{ textDecoration: 'none' }}>
+						<h3>TIL</h3>
+					</NavLink>
+					<NavLink to="/explain" style={{ textDecoration: 'none' }}>
+						<h3>ELI5</h3>
+					</NavLink>
+					<NavLink to="/memes" style={{ textDecoration: 'none' }}>
+						<h3>Memes</h3>
+					</NavLink>
+					<NavLink to="/programhumor" style={{ textDecoration: 'none' }}>
+						<h3>Programmer Humor</h3>
+					</NavLink>
+				</div>
+			</div>
 		</div>
 	);
 };

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, NavLink } from 'react-router-dom';
 import { selectProgramPosts } from '../../app/store';
 import { getProgramPosts } from '../actions/programHumorActions';
+import './css/generalformat.css';
 
 const ProgramHumor = () => {
 	const dispatch = useDispatch();
@@ -23,30 +24,34 @@ const ProgramHumor = () => {
 
 	return (
 		<div>
-			<h2>Program Humor</h2>
-            <img
+			<img
 				src="https://i.etsystatic.com/18497899/r/il/c2a9bc/2271558047/il_1588xN.2271558047_96n3.jpg"
 				alt="rabbit wearing sunglasses"
 				width="200"
 				height="200"
 			/>
+			<h1>Programmer Humor</h1>
 			{programList ? (
-				programList.map((post, index) => <h2 key={index}>{post.data.title}</h2>)
+				programList.map((post, index) => (
+					<h2 className="listDisplay" key={index}>
+						{post.data.title}
+					</h2>
+				))
 			) : (
 				<h1>Loading...</h1>
 			)}
-			<div className="navbar">
-				<h3>Categories</h3>
+			<div className="navBar">
+				<h2 className="category">Categories</h2>
 				<button onClick={homeButton}>
 					<p>Go Home</p>
 				</button>
-				<NavLink to="/til">
+				<NavLink to="/til" style={{ textDecoration: 'none' }}>
 					<h3>TIL</h3>
 				</NavLink>
-				<NavLink to="/explain">
+				<NavLink to="/explain" style={{ textDecoration: 'none' }}>
 					<h3>ELI5</h3>
 				</NavLink>
-                <NavLink to="/memes">
+				<NavLink to="/memes" style={{ textDecoration: 'none' }}>
 					<h3>Memes</h3>
 				</NavLink>
 			</div>
