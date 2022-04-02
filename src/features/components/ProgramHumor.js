@@ -25,6 +25,7 @@ const ProgramHumor = () => {
 	return (
 		<div>
 			<img
+				className="bunny"
 				src="https://i.etsystatic.com/18497899/r/il/c2a9bc/2271558047/il_1588xN.2271558047_96n3.jpg"
 				alt="rabbit wearing sunglasses"
 				width="200"
@@ -33,9 +34,13 @@ const ProgramHumor = () => {
 			<h1>Programmer Humor</h1>
 			{programList ? (
 				programList.map((post, index) => (
-					<h2 className="listDisplay" key={index}>
-						{post.data.title}
-					</h2>
+					<div>
+						<h2 className="listDisplay" key={index}>
+							{post.data.title}
+						</h2>
+						<img src={post.data.thumbnail} />
+						
+					</div>
 				))
 			) : (
 				<h1>Loading...</h1>

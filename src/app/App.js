@@ -7,10 +7,12 @@ import TIL from '../features/components/TIL';
 import ExplainLike from '../features/components/ExplainLike';
 import Memes from '../features/components/Memes';
 import ProgramHumor from '../features/components/ProgramHumor';
+import NavBarComp from '../features/components/NavBar';
 
 function App() {
 	return (
 		<div className="App">
+			<NavBarComp />
 			<h1>Down The Reddit Hole</h1>
 
 			<Router>

@@ -17,7 +17,7 @@ const HomePage = () => {
 	}, [dispatch]);
 
 	let listInfo = newPosts.newPosts;
-	// console.log('infoTest =====', listInfo);
+	console.log('infoTest =====', listInfo);
 
 	return (
 		<div className="page">
@@ -32,9 +32,13 @@ const HomePage = () => {
 			<div className="posts">
 				{listInfo ? (
 					listInfo.map((post, index) => (
-						<h2 className="listDisplay" key={index}>
-							{post.data.title}
-						</h2>
+						<div>
+							<h2 className="listDisplay" key={index}>
+								{post.data.title}
+							</h2>
+							<img src={post.data.thumbnail} />
+							
+						</div>
 					))
 				) : (
 					<h1>Loading...</h1>

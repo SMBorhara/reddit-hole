@@ -7,6 +7,8 @@ import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { render } from '@testing-library/react';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>

@@ -24,6 +24,7 @@ const TIL = () => {
 	return (
 		<div>
 			<img
+				className="bunny"
 				src="https://i.etsystatic.com/18497899/r/il/c2a9bc/2271558047/il_1588xN.2271558047_96n3.jpg"
 				alt="rabbit wearing sunglasses"
 				width="200"
@@ -32,9 +33,12 @@ const TIL = () => {
 			<h1> Today I Learned </h1>
 			{tilList ? (
 				tilList.map((post, index) => (
-					<h2 className="listDisplay" key={index}>
-						{post.data.title}
-					</h2>
+					<div>
+						<h2 className="listDisplay" key={index}>
+							{post.data.title}
+						</h2>
+						<img src={post.data.thumbnail} />
+					</div>
 				))
 			) : (
 				<h1>Loading...</h1>
@@ -50,7 +54,7 @@ const TIL = () => {
 				<NavLink to="/memes" style={{ textDecoration: 'none' }}>
 					<h3>Memes</h3>
 				</NavLink>
-				<NavLink to="/programhumor"style={{ textDecoration: 'none' }}>
+				<NavLink to="/programhumor" style={{ textDecoration: 'none' }}>
 					<h3>Programmer Humor</h3>
 				</NavLink>
 			</div>

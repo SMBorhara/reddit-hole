@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, NavLink } from 'react-router-dom';
 import { selectMemesPosts } from '../../app/store';
 import { getMemePosts } from '../actions/memesActions';
+import newPostsReducer from '../actions/newPostsReducer';
 import './css/generalformat.css';
+
 const Memes = () => {
 	const dispatch = useDispatch();
 	const memePosts = useSelector(selectMemesPosts);
-	// useSelector((state) => console.log('tilstate===>', state.explainPostList));
+	useSelector((state) => console.log('MEMEstate===>', state.memesPostList));
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -18,8 +20,12 @@ const Memes = () => {
 		navigate('/');
 	}
 
+	function uniqueID() {
+		return Math.floor(Math.random() * Date.now());
+	}
+
 	let memeList = memePosts.memePosts;
-	console.log('memeLIST', memeList);
+	// console.log('memeLIST', memeList);
 
 	return (
 		<div>
@@ -34,10 +40,10 @@ const Memes = () => {
 			{memeList ? (
 				memeList.map((post, index) => (
 					<div>
-						<h2 className="listDisplay" key={index}>
-							{post.data.title}
+						<h2 className="memeDisplay" key={index}>
+							{post.responseURL}
 						</h2>
-						<img src={post.data.preview.images[0].source.url} />
+						<img src={post.data.thumbnail} />
 					</div>
 				))
 			) : (
