@@ -29,4 +29,13 @@ export const selectTILPosts = (state) => state.tilPostList;
 export const selectExplainPosts = (state) => state.explainPostList;
 export const selectMemesPosts = (state) => state.memesPostList;
 export const selectProgramPosts = (state) => state.programPostList;
+export const selectAllPosts = (state) => {
+	return [
+		state.newPostList,
+		state.tilPostList,
+		state.explainPostList,
+		state.memesPostList,
+		state.programPostList,
+	];
+};
 // export default store;

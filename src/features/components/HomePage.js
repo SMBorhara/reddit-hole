@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNewPosts } from '../actions/newPostsAction';
 import { selectNewPosts } from '../../app/store';
-import { NavLink } from 'react-router-dom';
 
 import './css/generalformat.css';
 
@@ -37,29 +36,11 @@ const HomePage = () => {
 								{post.data.title}
 							</h2>
 							<img src={post.data.thumbnail} />
-							
 						</div>
 					))
 				) : (
 					<h1>Loading...</h1>
 				)}
-			</div>
-			<div className="navBar">
-				<h2 className="category">Categories</h2>
-				<div>
-					<NavLink to="/til" style={{ textDecoration: 'none' }}>
-						<h3>TIL</h3>
-					</NavLink>
-					<NavLink to="/explain" style={{ textDecoration: 'none' }}>
-						<h3>ELI5</h3>
-					</NavLink>
-					<NavLink to="/memes" style={{ textDecoration: 'none' }}>
-						<h3>Memes</h3>
-					</NavLink>
-					<NavLink to="/programhumor" style={{ textDecoration: 'none' }}>
-						<h3>Programmer Humor</h3>
-					</NavLink>
-				</div>
 			</div>
 		</div>
 	);
