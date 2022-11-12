@@ -1,4 +1,4 @@
-import { GET_PROGRAMHUMOR } from './types';
+import { GET_PROGRAMHUMOR } from '../constants/constants';
 
 const initialState = {};
 

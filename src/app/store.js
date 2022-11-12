@@ -1,10 +1,11 @@
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import explainPostsReducer from '../features/actions/explainReducer';
-import memesPostsReducer from '../features/actions/memesReducer';
-import newPostsReducer from '../features/actions/newPostsReducer';
-import programPostsReducer from '../features/actions/programReducer';
-import tilPostsReducer from '../features/actions/tilReducer';
+import bunnyPostsReducer from '../features/reducers/bunnyReducer';
+import explainPostsReducer from '../features/reducers/explainReducer';
+import memesPostsReducer from '../features/reducers/memesReducer';
+import newPostsReducer from '../features/reducers/newPostsReducer';
+import programPostsReducer from '../features/reducers/programReducer';
+import tilPostsReducer from '../features/reducers/tilReducer';
 
 const initialState = {};
 
@@ -14,6 +15,7 @@ const reducers = {
 	explainPostList: explainPostsReducer,
 	memesPostList: memesPostsReducer,
 	programPostList: programPostsReducer,
+	bunnyPostList: bunnyPostsReducer
 };
 
 const rootReducer = combineReducers(reducers);

@@ -1,4 +1,4 @@
-import { GET_MEMES } from './types';
+import { GET_MEMES } from '../constants/constants';
 
 const initialState = {};
 

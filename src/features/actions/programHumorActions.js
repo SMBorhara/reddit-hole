@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_PROGRAMHUMOR } from './types';
+import { GET_PROGRAMHUMOR } from '../constants/constants';
 
 export const getProgramPosts = () => {
 	return async (dispatch) => {

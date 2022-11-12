@@ -5,33 +5,30 @@ import {
 	NavDropdown,
 	Container,
 	Form,
-	FormControl,
 	Button,
 } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
-import { selectAllPosts } from '../../app/store';
 
-const NavBarComp = () => {
-	const allPosts = useSelector(selectAllPosts);
-	// let search = (term) => {
-	// 	console.log(allPosts);
-	// };
-
-	// let inputHandler = (e) => {
-	// 	var lowerCase = e.target.value.toLowerCase();
-	// 	// TODO: Make search page
-	// };
+const NavBar = () => {
 	return (
-		<Navbar bg="purple" expand="lg" variant="light">
+		<Navbar bg="light" expand="lg">
 			<Container fluid>
 				<Navbar.Brand href="#">
-					<img
-						src="https://i.gifer.com/XEDA.gif"
-						width="75"
-						height="75"
-						className="bunny"
-						alt="Hopping Bunny"
-					/>
+					<Nav.Link href="/wonderland">
+						<img
+							className="bunny"
+							src="https://i.etsystatic.com/18497899/r/il/c2a9bc/2271558047/il_1588xN.2271558047_96n3.jpg"
+							alt="rabbit wearing sunglasses"
+							width="75"
+							height="75"
+						/>
+					</Nav.Link>
+					<Nav.Link
+						href="/"
+						class="link-secondary"
+						style={{ textDecoration: 'none' }}
+					>
+						Down the Reddit Hole
+					</Nav.Link>
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="navbarScroll" />
 				<Navbar.Collapse id="navbarScroll">
@@ -40,32 +37,30 @@ const NavBarComp = () => {
 						style={{ maxHeight: '100px' }}
 						navbarScroll
 					>
-						<Nav.Link href="/">Home</Nav.Link>
-						<Nav.Link href="/til">TIL</Nav.Link>
-						<NavDropdown title="More" id="navbarScrollingDropdown">
+						<NavDropdown title="Visit Wonderland" id="basic-nav-dropdown">
+							<NavDropdown.Item href="/">Recent</NavDropdown.Item>
+							<NavDropdown.Item href="/til">TIL</NavDropdown.Item>
 							<NavDropdown.Item href="/explain">ELI5</NavDropdown.Item>
-							<NavDropdown.Divider />
 							<NavDropdown.Item href="/memes">Memes</NavDropdown.Item>
-							<NavDropdown.Divider />
 							<NavDropdown.Item href="/programhumor">
 								Programmer Humor
 							</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
-					{/* <Form className="d-flex">
-						<FormControl
+
+					<Form className="d-flex">
+						<Form.Control
 							type="search"
 							placeholder="Search"
 							className="me-2"
 							aria-label="Search"
-							onChange={inputHandler}
 						/>
 						<Button variant="outline-success">Search</Button>
-					</Form> */}
+					</Form>
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>
 	);
 };
 
-export default NavBarComp;
+export default NavBar;

@@ -7,16 +7,17 @@ import TIL from '../features/components/TIL';
 import ExplainLike from '../features/components/ExplainLike';
 import Memes from '../features/components/Memes';
 import ProgramHumor from '../features/components/ProgramHumor';
-import NavBarComp from '../features/components/NavBar';
+import NavBar from '../features/components/NavBar';
+import BunnyPosts from '../features/components/BunnyPosts';
 
 function App() {
 	return (
 		<div className="App">
-			<NavBarComp />
-			<h1>Down The Reddit Hole</h1>
+			<NavBar />
 
 			<Router>
 				<Routes>
+					<Route path="/wonderland" element={<BunnyPosts />} />
 					<Route path="/" element={<HomePage />} />
 					<Route path="/TIL" element={<TIL />} />
 					<Route path="/explain" element={<ExplainLike />} />

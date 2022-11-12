@@ -1,4 +1,4 @@
-import { GET_TILPOSTS } from './types';
+import { GET_TILPOSTS } from '../constants/constants';
 
 const initialState = {};
 

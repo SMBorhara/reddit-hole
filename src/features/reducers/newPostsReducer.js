@@ -1,4 +1,4 @@
-import { GET_NEWPOSTS } from './types';
+import { GET_NEWPOSTS } from '../constants/constants';
 
 const initialState = {};
 
@@ -12,4 +12,3 @@ export default function newPostsReducer(state = initialState, action) {
 		}
 	}
 }
-

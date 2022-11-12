@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_EXPLAINPOSTS } from './types';
+import { GET_EXPLAINPOSTS } from '../constants/constants';
 
 export const getExplainPosts = () => {
 	return async (dispatch) => {

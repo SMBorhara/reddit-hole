@@ -1,4 +1,4 @@
-import { GET_EXPLAINPOSTS } from './types';
+import { GET_EXPLAINPOSTS } from '../constants/constants.js';
 
 const initialState = {};
 

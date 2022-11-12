@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_TILPOSTS } from './types';
+import { GET_TILPOSTS } from '../constants/constants';
 
 export const getTILPosts = () => {
 	return async (dispatch) => {

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_MEMES } from './types';
+import { GET_MEMES } from '../constants/constants';
 
 export const getMemePosts = () => {
 	return async (dispatch) => {

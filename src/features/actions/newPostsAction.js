@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_NEWPOSTS } from './types';
+import { GET_NEWPOSTS } from '../constants/constants';
 
 export const getNewPosts = () => {
 	return async (dispatch) => {

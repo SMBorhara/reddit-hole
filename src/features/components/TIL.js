@@ -17,13 +17,7 @@ const TIL = () => {
 
 	return (
 		<div>
-			<img
-				className="bunny"
-				src="https://i.etsystatic.com/18497899/r/il/c2a9bc/2271558047/il_1588xN.2271558047_96n3.jpg"
-				alt="rabbit wearing sunglasses"
-				width="200"
-				height="200"
-			/>
+			
 			<h1> Today I Learned </h1>
 			{tilList ? (
 				tilList.map((post, index) => (
