@@ -15,3 +15,4 @@ export const GET_PROGRAMHUMOR = 'GET_PROGRAMHUMOR';
 
 // Bunny content
 export const GET_BUNNY_POSTS = 'GET_BUNNY_POSTS';
+export const GET_BUNNY_COMMENTS = 'GET_BUNNY_COMMENTS';

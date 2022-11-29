@@ -12,13 +12,12 @@ function Memes() {
 
 	useEffect(() => {
 		dispatch(getMemePosts(memePosts));
-	}, [dispatch]);
+	}, [dispatch, memePosts]);
 
 	let memeList = memePosts.memePosts;
 	console.log('memeLIST', memeList);
 	return (
 		<div>
-			
 			<h1>Memes</h1>
 			{memeList ? (
 				memeList.map((post, index) => (
@@ -26,7 +25,7 @@ function Memes() {
 						<h2 className="memeDisplay" key={index}>
 							{post.data.title}
 						</h2>
-						<img src={post.data.thumbnail} />
+						<img src={post.data.thumbnail} alt="" />
 					</div>
 				))
 			) : (

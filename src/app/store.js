@@ -15,7 +15,7 @@ const reducers = {
 	explainPostList: explainPostsReducer,
 	memesPostList: memesPostsReducer,
 	programPostList: programPostsReducer,
-	bunnyPostList: bunnyPostsReducer
+	bunnyPostList: bunnyPostsReducer,
 };
 
 const rootReducer = combineReducers(reducers);
@@ -26,6 +26,7 @@ export const store = createStore(
 	applyMiddleware(thunk)
 );
 
+export const selectBunnyPosts = (state) => state.bunnyPostList;
 export const selectNewPosts = (state) => state.newPostList;
 export const selectTILPosts = (state) => state.tilPostList;
 export const selectExplainPosts = (state) => state.explainPostList;
@@ -38,6 +39,7 @@ export const selectAllPosts = (state) => {
 		state.explainPostList,
 		state.memesPostList,
 		state.programPostList,
+		state.bunnyPostList
 	];
 };
 // export default store;

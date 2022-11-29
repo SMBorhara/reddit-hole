@@ -8,7 +8,7 @@ import ExplainLike from '../features/components/ExplainLike';
 import Memes from '../features/components/Memes';
 import ProgramHumor from '../features/components/ProgramHumor';
 import NavBar from '../features/components/NavBar';
-import BunnyPosts from '../features/components/BunnyPosts';
+import BunnyPosts from '../features/screens/BunnyPosts';
 
 function App() {
 	return (

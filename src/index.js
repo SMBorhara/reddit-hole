@@ -5,8 +5,6 @@ import App from './app/App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 
-
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
