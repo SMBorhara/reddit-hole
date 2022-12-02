@@ -8,7 +8,7 @@ export default function bunnyPostsReducer(state = initialState, action) {
 			return { ...state, bunnyPosts: action.payload };
 		}
 		case GET_BUNNY_COMMENTS: {
-			return { ...state, bunnyCommenets: action.payload };
+			return { ...state, bunnyComments: action.payload };
 		}
 		default: {
 			return state;

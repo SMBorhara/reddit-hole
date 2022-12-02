@@ -15,7 +15,7 @@ export const getBunnyComments = () => {
 		const bunnyComments = await axios.get(
 			'https://www.reddit.com/r/Rabbits/comments'
 		);
-		console.log('COMMENTS', bunnyComments);
+		// console.log('COMMENTS', bunnyComments);
 		// const bunnyComments = bunnyData;
 		dispatch({ type: GET_BUNNY_COMMENTS, payload: bunnyComments });
 	};

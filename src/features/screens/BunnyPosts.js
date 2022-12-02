@@ -1,11 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectBunnyPosts } from '../../app/store';
-import { getBunnyComments, getBunnyPosts } from '../actions/bunnyActions';
-import { Card } from 'react-bootstrap';
+import { getBunnyPosts } from '../actions/bunnyActions';
+
+import {
+	MDBCard,
+	MDBCardBody,
+	MDBCardTitle,
+	MDBCardImage,
+} from 'mdb-react-ui-kit';
 
 const BunnyPosts = () => {
 	const bunnyFeed = useSelector(selectBunnyPosts);
+	console.log(bunnyFeed);
 
 	const dispatch = useDispatch();
 
@@ -13,25 +20,41 @@ const BunnyPosts = () => {
 		dispatch(getBunnyPosts(bunnyFeed));
 	}, [dispatch, bunnyFeed]);
 
-	useEffect(() => {
-		dispatch(getBunnyComments());
-	});
+	// useEffect(() => {
+	// 	dispatch(getBunnyComments());
+	// });
 
 	let bunnyThread = bunnyFeed.bunnyPosts;
 	console.log(bunnyThread);
+
+	// let comments = bunnyFeed.bunnyComments;
+	// console.log('COMMENTS', comments);
+	// console.log(comments);
 
 	return (
 		<>
 			<h1>You've Truly Fallen</h1>
 			{bunnyThread ? (
 				bunnyThread.map((post, index) => (
-					<Card>
-						<Card.Img variant="top" md={3} src={post.data.thumbnail} />
-						<Card.Body>
-							<Card.Title>{post.data.title}</Card.Title>
-							<Card.Text>{post.data.permalink}</Card.Text>
-						</Card.Body>
-					</Card>
+					<div class="card-columns mx-auto d-flex justify-content-center">
+						<MDBCard
+							shadow="0"
+							border="dark"
+							background="white"
+							className="px-3 pt-3 mb-4"
+							style={{ maxWidth: '45rem' }}
+						>
+							<MDBCardImage
+								src={post.data.thumbnail}
+								position="top"
+								alt="..."
+								className="img-thumbnail"
+							/>
+							<MDBCardBody>
+								<MDBCardTitle>{post.data.title}</MDBCardTitle>
+							</MDBCardBody>
+						</MDBCard>
+					</div>
 				))
 			) : (
 				<h1>Loading</h1>

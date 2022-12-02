@@ -1,5 +1,6 @@
 .App {
 	text-align: center;
+	
 }
 
 .App-logo {
@@ -20,6 +21,7 @@
 	align-items: center;
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
+	color: blueviolet;
 }
 
 .App-link {
@@ -27,7 +29,9 @@
 }
 
 h1 {
-	color: #f4f7f5;
+	color: #9b9e9b;
+	padding-bottom: 5rem;
+	padding-top: 2rem;
 }
 
 @keyframes App-logo-float {
