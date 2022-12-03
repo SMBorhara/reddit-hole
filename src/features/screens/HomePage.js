@@ -7,6 +7,7 @@ import {
 	MDBCardBody,
 	MDBCardTitle,
 	MDBCardImage,
+	MDBCardText,
 } from 'mdb-react-ui-kit';
 
 import '../generalformat.css';
@@ -15,7 +16,7 @@ const HomePage = () => {
 	const dispatch = useDispatch();
 	const newPosts = useSelector(selectNewPosts);
 	// useSelector((state) => console.log('state===>', state.newPostList));
-	// console.log('NP USESELECTOR??', newPosts);
+	console.log('NP USESELECTOR??', newPosts);
 
 	useEffect(() => {
 		dispatch(getNewPosts(newPosts));
@@ -26,7 +27,7 @@ const HomePage = () => {
 
 	return (
 		<>
-			<h1>Most Recent Posts</h1>
+			<h1>Women Who Code</h1>
 
 			{listInfo ? (
 				listInfo.map((post, index) => (
@@ -46,6 +47,7 @@ const HomePage = () => {
 							/>
 							<MDBCardBody>
 								<MDBCardTitle>{post.data.title}</MDBCardTitle>
+								<MDBCardText>{post.data.selftext}</MDBCardText>
 							</MDBCardBody>
 						</MDBCard>
 					</div>

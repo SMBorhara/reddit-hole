@@ -2,7 +2,12 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectExplainPosts } from '../../app/store';
 import { getExplainPosts } from '../actions/explainActions';
-import { MDBCard, MDBCardBody, MDBCardTitle } from 'mdb-react-ui-kit';
+import {
+	MDBCard,
+	MDBCardBody,
+	MDBCardTitle,
+	MDBCardText,
+} from 'mdb-react-ui-kit';
 
 const ExplainLike = () => {
 	const dispatch = useDispatch();
@@ -31,6 +36,7 @@ const ExplainLike = () => {
 						>
 							<MDBCardBody>
 								<MDBCardTitle>{post.data.title}</MDBCardTitle>
+								<MDBCardText>{post.data.selftext}</MDBCardText>
 							</MDBCardBody>
 						</MDBCard>
 					</div>

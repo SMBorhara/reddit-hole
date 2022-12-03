@@ -9,6 +9,7 @@ import {
 	MDBCardBody,
 	MDBCardTitle,
 	MDBCardImage,
+	MDBCardText,
 } from 'mdb-react-ui-kit';
 
 const ProgramHumor = () => {
@@ -44,6 +45,7 @@ const ProgramHumor = () => {
 							/>
 							<MDBCardBody>
 								<MDBCardTitle>{post.data.title}</MDBCardTitle>
+								<MDBCardText>{post.data.selftext}</MDBCardText>
 							</MDBCardBody>
 						</MDBCard>
 					</div>

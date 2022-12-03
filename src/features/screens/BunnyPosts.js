@@ -9,6 +9,7 @@ import {
 	MDBCardBody,
 	MDBCardTitle,
 	MDBCardImage,
+	MDBCardText,
 } from 'mdb-react-ui-kit';
 
 const BunnyPosts = () => {
@@ -53,6 +54,7 @@ const BunnyPosts = () => {
 							/>
 							<MDBCardBody>
 								<MDBCardTitle>{post.data.title}</MDBCardTitle>
+								<MDBCardText>{post.data.selftext}</MDBCardText>
 							</MDBCardBody>
 						</MDBCard>
 					</div>
