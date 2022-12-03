@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Rubik+Microbe&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Nerko+One&display=swap');
+
+
+/* body {
+	background-color: #c490d1 !important;
+} */
+
+.bunny {
+	border-radius: 50%;
+}
+
+.listDisplay {
+	font-size: 30px;
+	font-family: 'Patrick Hand';
+}
+
+h2 {
+	font-family: 'Patrick Hand';
+	color: #08090a;
+}
+#basic-nav-dropdown, #homeLink
+ {
+	font-family: 'Rubik Microbe', cursive;
+}
+
+.dropList {
+	font-family: 'Nerko One', cursive;
+	
+}

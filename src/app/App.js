@@ -2,13 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import './App.css';
-import HomePage from '../features/components/HomePage';
-import TIL from '../features/components/TIL';
-import ExplainLike from '../features/components/ExplainLike';
-import Memes from '../features/components/Memes';
-import ProgramHumor from '../features/components/ProgramHumor';
+import HomePage from '../features/screens/HomePage';
+import TIL from '../features/screens/TIL';
+import ExplainLike from '../features/screens/ExplainLike';
+import Memes from '../features/screens/Memes';
+import ProgramHumor from '../features/screens/ProgramHumor';
 import NavBar from '../features/components/NavBar';
 import BunnyPosts from '../features/screens/BunnyPosts';
+import ScrollUp from '../features/components/ScrollUp';
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 					<Route path="/programhumor" element={<ProgramHumor />} />
 				</Routes>
 			</Router>
+			<ScrollUp />
 		</div>
 	);
 }

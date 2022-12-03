@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectBunnyPosts } from '../../app/store';
-import { getBunnyPosts } from '../actions/bunnyActions';
-import '../generalformat.css';
-
+import { getNewPosts } from '../actions/newPostsAction';
+import { selectNewPosts } from '../../app/store';
 import {
 	MDBCard,
 	MDBCardBody,
@@ -11,32 +9,27 @@ import {
 	MDBCardImage,
 } from 'mdb-react-ui-kit';
 
-const BunnyPosts = () => {
-	const bunnyFeed = useSelector(selectBunnyPosts);
-	console.log(bunnyFeed);
+import '../generalformat.css';
 
+const HomePage = () => {
 	const dispatch = useDispatch();
+	const newPosts = useSelector(selectNewPosts);
+	// useSelector((state) => console.log('state===>', state.newPostList));
+	// console.log('NP USESELECTOR??', newPosts);
 
 	useEffect(() => {
-		dispatch(getBunnyPosts(bunnyFeed));
-	}, [dispatch, bunnyFeed]);
+		dispatch(getNewPosts(newPosts));
+	}, [dispatch, newPosts]);
 
-	// useEffect(() => {
-	// 	dispatch(getBunnyComments());
-	// });
-
-	let bunnyThread = bunnyFeed.bunnyPosts;
-	console.log(bunnyThread);
-
-	// let comments = bunnyFeed.bunnyComments;
-	// console.log('COMMENTS', comments);
-	// console.log(comments);
+	let listInfo = newPosts.newPosts;
+	console.log('infoTest =====', listInfo);
 
 	return (
 		<>
-			<h1>You've Truly Fallen</h1>
-			{bunnyThread ? (
-				bunnyThread.map((post, index) => (
+			<h1>Most Recent Posts</h1>
+
+			{listInfo ? (
+				listInfo.map((post, index) => (
 					<div class="card-columns mx-auto d-flex justify-content-center">
 						<MDBCard
 							shadow="0"
@@ -58,10 +51,10 @@ const BunnyPosts = () => {
 					</div>
 				))
 			) : (
-				<h1>Loading</h1>
+				<h1>Loading...</h1>
 			)}
 		</>
 	);
 };
 
-export default BunnyPosts;
+export default HomePage;

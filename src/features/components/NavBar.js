@@ -1,18 +1,19 @@
 import React from 'react';
-import {
-	Navbar,
-	Nav,
-	NavDropdown,
-	Container,
-	Form,
-	Button,
-} from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { MDBNavbar, MDBContainer } from 'mdb-react-ui-kit';
+
+import '../generalformat.css';
 
 const NavBar = () => {
 	return (
 		<div>
-			<Navbar bg="light" expand="lg">
-				<Container fluid>
+			<MDBNavbar
+				bg="light"
+				expand="lg"
+				light
+				style={{ backgroundColor: '#e3f2fd' }}
+			>
+				<MDBContainer fluid>
 					<Navbar.Brand href="#">
 						<Nav.Link href="/wonderland">
 							<img
@@ -27,6 +28,7 @@ const NavBar = () => {
 							href="/"
 							className="link-secondary"
 							style={{ textDecoration: 'none' }}
+							id="homeLink"
 						>
 							Down the Reddit Hole
 						</Nav.Link>
@@ -34,33 +36,37 @@ const NavBar = () => {
 					<Navbar.Toggle aria-controls="navbarScroll" />
 					<Navbar.Collapse id="navbarScroll">
 						<Nav
-							className="me-auto my-2 my-lg-0"
+							className="ms-auto my-2 my-lg-0"
 							style={{ maxHeight: '100px' }}
 							navbarScroll
 						>
 							<NavDropdown title="Visit Wonderland" id="basic-nav-dropdown">
-								<NavDropdown.Item href="/">Recent</NavDropdown.Item>
-								<NavDropdown.Item href="/til">TIL</NavDropdown.Item>
-								<NavDropdown.Item href="/explain">ELI5</NavDropdown.Item>
-								<NavDropdown.Item href="/memes">Memes</NavDropdown.Item>
-								<NavDropdown.Item href="/programhumor">
+								<NavDropdown.Item className="dropList" href="/">
+									Recent
+								</NavDropdown.Item>
+								<NavDropdown.Item className="dropList" href="/til">
+									TIL
+								</NavDropdown.Item>
+								<NavDropdown.Item className="dropList" href="/explain">
+									ELI5
+								</NavDropdown.Item>
+								<NavDropdown.Item className="dropList" href="/memes">
+									Memes
+								</NavDropdown.Item>
+								<NavDropdown.Item className="dropList" href="/programhumor">
 									Programmer Humor
+								</NavDropdown.Item>
+								<NavDropdown.Item
+									className="dropList"
+									href="https://www.reddit.com/"
+								>
+									Fall Further
 								</NavDropdown.Item>
 							</NavDropdown>
 						</Nav>
-
-						<Form className="d-flex">
-							<Form.Control
-								type="search"
-								placeholder="Search"
-								className="me-2"
-								aria-label="Search"
-							/>
-							<Button variant="outline-success">Search</Button>
-						</Form>
 					</Navbar.Collapse>
-				</Container>
-			</Navbar>
+				</MDBContainer>
+			</MDBNavbar>
 		</div>
 	);
 };

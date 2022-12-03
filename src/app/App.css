@@ -29,7 +29,8 @@
 }
 
 h1 {
-	color: #9b9e9b;
+	font-family: 'Nerko One', cursive;
+	color: #90CAF9;
 	padding-bottom: 5rem;
 	padding-top: 2rem;
 }

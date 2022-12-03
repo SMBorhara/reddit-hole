@@ -2,7 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectProgramPosts } from '../../app/store';
 import { getProgramPosts } from '../actions/programHumorActions';
-import './css/generalformat.css';
+import '../generalformat.css';
+
+import {
+	MDBCard,
+	MDBCardBody,
+	MDBCardTitle,
+	MDBCardImage,
+} from 'mdb-react-ui-kit';
 
 const ProgramHumor = () => {
 	const dispatch = useDispatch();
@@ -11,22 +18,34 @@ const ProgramHumor = () => {
 
 	useEffect(() => {
 		dispatch(getProgramPosts(programPosts));
-	}, [dispatch]);
+	}, [dispatch, programPosts]);
 
 	let programList = programPosts.programPosts;
 	// console.log('explainLIST', explainList);
 
 	return (
 		<div>
-			
 			<h1>Programmer Humor</h1>
 			{programList ? (
 				programList.map((post, index) => (
-					<div>
-						<h2 className="listDisplay" key={index}>
-							{post.data.title}
-						</h2>
-						<img src={post.data.thumbnail} />
+					<div class="card-columns mx-auto d-flex justify-content-center">
+						<MDBCard
+							shadow="0"
+							border="dark"
+							background="white"
+							className="px-3 pt-3 mb-4"
+							style={{ maxWidth: '45rem' }}
+						>
+							<MDBCardImage
+								src={post.data.thumbnail}
+								position="top"
+								alt="..."
+								className="img-thumbnail"
+							/>
+							<MDBCardBody>
+								<MDBCardTitle>{post.data.title}</MDBCardTitle>
+							</MDBCardBody>
+						</MDBCard>
 					</div>
 				))
 			) : (
